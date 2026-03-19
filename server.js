@@ -30,6 +30,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // Upload API
+const uploadPath = "/uploads";
 app.post("/upload", upload.single("file"), (req, res) => {
   res.json({ message: "File uploaded successfully!" });
 });
