@@ -19,13 +19,16 @@ if (!fs.existsSync("uploads")) {
 // Storage config
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "uploads/");
+    // This points to the exact location of the Render Disk
+    const uploadDir = path.join(__dirname, 'uploads'); 
+    cb(null, uploadDir);
   },
   filename: (req, file, cb) => {
     const uniqueName = Date.now() + "-" + file.originalname;
     cb(null, uniqueName);
   },
 });
+
 
 const upload = multer({ storage });
 
