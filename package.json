@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
-  },
+  }
   "dependencies": {
     "cloudinary": "^2.0.0",
 "multer-storage-cloudinary": "^4.0.0"
